@@ -14,7 +14,7 @@ Add the package to your Unity project via Git URL:
 
 1. Open Unity Package Manager (`Window > Package Manager`).
 2. Click the `+` button and select `Add package from git URL`.
-3. Enter the repository URL: `https://github.com/your-username/xai-seed-system.git`
+3. Enter the repository URL: `https://github.com/mariefismi02/RandomSeedGenerator.git`
 4. Click `Add`. Unity will download and import the package.
 
 **Requirements**:
