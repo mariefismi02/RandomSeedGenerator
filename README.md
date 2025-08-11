@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
     }
 
     void Start(){
-// register groups
+        // register groups
         randomizerManager.RegisterRandomizer("deck");
         randomizerManager.RegisterRandomizer("shop");
         randomizerManager.RegisterRandomizer("boss");
