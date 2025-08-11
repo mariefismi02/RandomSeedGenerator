@@ -23,9 +23,9 @@ Add the package to your Unity project via Git URL:
 
 ## Usage
 
-1. **Add `SeedManager` to a GameObject**:
+1. **Add Scripts to a GameObject**:
    - Attach the `SeedManager` component to a GameObject in your scene.
-   - Optionally, provide a custom `ISeedHasher` implementation for seed hashing (defaults to `DefaultSeedHasher`).
+   - Attach the `RandomizerManager` component to a GameObject in your scene .
 
 2. **Initialize the Seed**:
    - Call `SeedManager.InitializeSeed(seedStr)` to set a seed.
@@ -94,6 +94,3 @@ public class GameManager : MonoBehaviour
 
 ## Why Register Randomizers Per Group?
 Each `Randomizer` ensures consistent randomization for its group (e.g., deck, shop, boss) across runs with the same seed. Register a new `Randomizer` for each group to maintain isolated, reproducible random sequences, mimicking *Balatro*'s seed system.
-
-## License
-MIT License. See [LICENSE](LICENSE) for details.
