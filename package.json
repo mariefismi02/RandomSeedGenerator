@@ -1,0 +1,11 @@
+{
+  "name": "com.mariefismi02.seed_system",
+  "version": "1.0.0",
+  "displayName": "Random Seed Generator",
+  "description": "Balatro-like random seed generator system",
+  "author": {
+    "name": "mariefismi02",
+    "email": "marief.ismirianda@gmail.com",
+    "url": "mariefismi02.github.io/portofolio"
+  }
+}
