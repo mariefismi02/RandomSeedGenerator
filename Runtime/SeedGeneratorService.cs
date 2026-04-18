@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 namespace mariefismi02.SeedSystem
 {
-    public class SeedGeneratorService : MonoBehaviour
+    public class SeedGeneratorService
     {
         private string currentSeed;
         public string CurrentSeed => currentSeed;

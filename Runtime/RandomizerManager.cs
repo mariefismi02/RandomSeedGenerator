@@ -5,15 +5,16 @@ using UnityEngine;
 
 namespace mariefismi02.SeedSystem
 {
-    public class RandomizerManager : MonoBehaviour
+    public class RandomizerManager
     {
         private Dictionary<string, Randomizer> randomizers;
         private int seedOffset;
 
         private int seedHash; 
 
-        private void Awake()
+        public RandomizerManager(int seedHash)
         {
+            this.seedHash = seedHash;
             randomizers = new Dictionary<string, Randomizer>();
             seedOffset = 1;
         }
