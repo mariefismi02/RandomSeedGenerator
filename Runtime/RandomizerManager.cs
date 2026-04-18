@@ -31,6 +31,17 @@ namespace mariefismi02.SeedSystem
             Debug.Log($"Registered randomizer for category: {category}");
         }
 
+        public void UnregisterRandomizer(string category)
+        {
+            if (string.IsNullOrEmpty(category))
+                throw new ArgumentException("Category cannot be null or empty.");
+            if (!randomizers.ContainsKey(category))
+                throw new ArgumentException($"No randomizer for category: {category}");
+
+            randomizers.Remove(category);
+            Debug.Log($"Unregistered randomizer for category: {category}");
+        }
+
         public T GetRandomItem<T>(T[] items, string category)
         {
             if (!randomizers.TryGetValue(category, out var randomizer))
