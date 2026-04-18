@@ -7,16 +7,20 @@ namespace mariefismi02.SeedSystem
 {
     public class RandomizerManager : MonoBehaviour
     {
-        public static RandomizerManager Instance { get; private set; }
-
         private Dictionary<string, Randomizer> randomizers;
         private int seedOffset;
 
+        private int seedHash; 
+
         private void Awake()
         {
-            Instance = this;
             randomizers = new Dictionary<string, Randomizer>();
             seedOffset = 1;
+        }
+
+        public void SetSeed(int seedHash)
+        {
+            this.seedHash = seedHash;
         }
 
         public void RegisterRandomizer(string category)
@@ -26,8 +30,7 @@ namespace mariefismi02.SeedSystem
             if (randomizers.ContainsKey(category))
                 throw new ArgumentException($"Category already registered: {category}");
 
-            var baseSeed = SeedGeneratorService.Instance.GetSeedHash();
-            randomizers[category] = new Randomizer(baseSeed + seedOffset++);
+            randomizers[category] = new Randomizer(seedHash + seedOffset++);
             Debug.Log($"Registered randomizer for category: {category}");
         }
 

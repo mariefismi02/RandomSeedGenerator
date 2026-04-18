@@ -12,13 +12,6 @@ namespace mariefismi02.SeedSystem
         
         private const int MaxSeedLength = 8;
 
-        public static SeedGeneratorService Instance { get; private set; }
-
-        private void Awake()
-        {
-            Instance = this;
-        }
-
         public void InitializeSeed(string seedStr = "")
         {
             currentSeed = string.IsNullOrEmpty(seedStr) ? GenerateRandomSeed() : seedStr;
