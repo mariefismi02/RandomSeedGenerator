@@ -41,7 +41,18 @@ namespace mariefismi02.SeedSystem
         private int StringToSeed(string seedStr)
         {
             if (int.TryParse(seedStr, out int seed)) return seed;
-            return seedStr.GetHashCode();
+            unchecked
+            {
+                const uint fnvOffset = 2166136261;
+                const uint fnvPrime = 16777619;
+                uint hash = fnvOffset;
+                foreach (char c in seedStr)
+                {
+                    hash ^= c;
+                    hash *= fnvPrime;
+                }
+                return (int)hash;
+            }
         }
 
         public void CopySeedToClipboard()
